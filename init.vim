@@ -4,8 +4,8 @@
 source ~/.config/nvim/vim-plug/plugins.vim
 
 " Load themes.
+" source ~/.config/nvim/themes/nord.vim
 source ~/.config/nvim/themes/onedark.vim
-source ~/.config/nvim/themes/nord.vim
 
 " General config
 source ~/.config/nvim/general-config/bind.vim

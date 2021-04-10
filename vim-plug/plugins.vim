@@ -35,8 +35,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'vim-airline/vim-airline'
   " Startify
   Plug 'mhinz/vim-startify'
+  " JavaScript
+  Plug 'pangloss/vim-javascript' 
+  " TypeScript
+  Plug 'leafgarland/typescript-vim'
   " JSX  
   Plug 'mxw/vim-jsx'
+  Plug 'maxmellon/vim-jsx-pretty'
   " FZF
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'

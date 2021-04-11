@@ -3,6 +3,7 @@ let mapleader=" "
 nnoremap <SPACE> <Nop>
 inoremap jk <ESC>
 vnoremap jk <ESC>
+cnoremap jk <ESC>
 nmap <C-n> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle

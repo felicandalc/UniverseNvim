@@ -10,6 +10,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'sheerun/vim-polyglot'
   " Auto pairs for delimiters
   Plug 'jiangmiao/auto-pairs'
+  " Prettier
+  Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/0.x' }
   "Themes
   Plug 'joshdick/onedark.vim'
   Plug 'arcticicestudio/nord-vim'
@@ -20,6 +22,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
   Plug 'ryanoasis/vim-devicons'
+  Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
   Plug 'scrooloose/nerdcommenter'
   " TMUX
@@ -45,6 +48,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " FZF
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  Plug 'airblade/vim-rooter'
   " Hexokinase (colorizer)
   Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 

@@ -7,7 +7,7 @@ vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 vmap <C-y> "+y
 vmap <A-P> "+p
-nnoremap <Leader><space> :noh<cr>
+nnoremap <CR> :noh<CR><CR>
 inoremap <key> <C-o>de
 
 " j/k will move virtual lines (lines that wrap)

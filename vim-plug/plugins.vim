@@ -34,10 +34,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'zchee/deoplete-go'
   Plug 'jodosha/vim-godebug'
   " Airline
-  Plug 'vim-airline/vim-airline-themes'
   Plug 'vim-airline/vim-airline'
-  " Startify
-  Plug 'mhinz/vim-startify'
   " JavaScript
   Plug 'pangloss/vim-javascript' 
   " TypeScript
@@ -51,5 +48,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'airblade/vim-rooter'
   " Hexokinase (colorizer)
   Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+  " CTRL P
+  Plug 'ctrlpvim/ctrlp.vim' 
+  " Surround
+  Plug 'tpope/vim-surround'
 
 call plug#end()

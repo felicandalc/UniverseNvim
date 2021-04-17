@@ -18,4 +18,3 @@ source ~/.config/nvim/plugins-config/airline.vim
 source ~/.config/nvim/general-config/initial.vim
 source ~/.config/nvim/general-config/bind.vim
 source ~/.config/nvim/general-config/set.vim
-source ~/.config/nvim/general-config/autocmd.vim

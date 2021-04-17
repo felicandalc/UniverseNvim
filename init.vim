@@ -10,9 +10,8 @@ source ~/.config/nvim/themes/onedark.vim
 " Plugins config
 source ~/.config/nvim/plugins-config/controlp.vim
 source ~/.config/nvim/plugins-config/nerdtree.vim
-source ~/.config/nvim/plugins-config/coc.vim
+"source ~/.config/nvim/plugins-config/coc.vim
 source ~/.config/nvim/plugins-config/prettier.vim
-source ~/.config/nvim/plugins-config/fzf.vim
 source ~/.config/nvim/plugins-config/airline.vim
 
 " General config

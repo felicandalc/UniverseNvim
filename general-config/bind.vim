@@ -4,7 +4,6 @@ nnoremap <SPACE> <Nop>
 
 " JK to exit
 inoremap jk <ESC>
-vnoremap jk <ESC>
 cnoremap jk <ESC>
 
 " Copy + paste from system clipboard

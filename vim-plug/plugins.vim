@@ -7,7 +7,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
   " Better syntax
-  "Plug 'sheerun/vim-polyglot'
+  Plug 'sheerun/vim-polyglot'
   " Auto pairs for delimiters
   Plug 'jiangmiao/auto-pairs'
   " Prettier
@@ -18,7 +18,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'joshdick/onedark.vim'
   Plug 'arcticicestudio/nord-vim'
   " COC
-  "Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " NERDTree
   Plug 'scrooloose/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -27,8 +27,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
   Plug 'scrooloose/nerdcommenter'
-  " TMUX
-  "Plug 'christoomey/vim-tmux-navigator'
   " Go
   Plug 'godoctor/godoctor.vim' 
   Plug 'fatih/vim-go'
@@ -42,8 +40,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " TypeScript
   Plug 'leafgarland/typescript-vim'
   " JSX  
-  Plug 'mxw/vim-jsx'
   Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'peitalin/vim-jsx-typescript'
+  " Styled components
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+  " GraphQL
+  Plug 'jparise/vim-graphql'
   " Hexokinase (colorizer)
   Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
   " ctrlp

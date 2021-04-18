@@ -9,7 +9,9 @@ Out of the box themes:
 - Nord.
 - One dark.
 
-Para utilizar alguno, comentar/descomentar la línea correspondiente al theme (init.vim).
+```bash
+:colorscheme onedark | nord
+```
 
 ##### Profiling
 

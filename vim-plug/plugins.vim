@@ -11,7 +11,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Auto pairs for delimiters
   Plug 'jiangmiao/auto-pairs'
   " Prettier
-  "Themes
+  Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/0.x' }
+  " Themes
   Plug 'joshdick/onedark.vim'
   Plug 'arcticicestudio/nord-vim'
   " COC

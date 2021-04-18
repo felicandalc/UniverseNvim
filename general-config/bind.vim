@@ -22,7 +22,7 @@ nnoremap <leader>O O<ESC>O
 nnoremap <leader>o o<cr>
 
 " Save
-noremap <leader>s :update<CR>
+noremap <leader>s :w<CR>
 
 " Moving lines
 nnoremap <A-j> :m .+1<CR>==

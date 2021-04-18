@@ -30,3 +30,5 @@ nmap <C-n> :NERDTreeToggle<cr>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 
+" Show hidden files
+let NERDTreeShowHidden = 1

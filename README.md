@@ -1,6 +1,6 @@
-## VIM Configuration
+## Neovim Configuration
 
-Configuración de VIM propia, está siendo constantemente iterada.
+Configuración de Neovim propia, está siendo constantemente iterada.
 
 ##### Themes
 

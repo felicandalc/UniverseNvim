@@ -8,8 +8,10 @@ vnoremap jk <ESC>
 cnoremap jk <ESC>
 
 " Copy + paste from system clipboard
-nmap <C-y> "+y
+nmap <C-c> "+y
 nmap <C-v> "+p
+vmap <C-c> "+y
+vmap <C-v> "+p
 nnoremap <CR> :noh<CR><CR>
 
 " j/k will move virtual lines (lines that wrap)
@@ -22,3 +24,11 @@ nnoremap <leader>o o<cr>
 
 " Save
 noremap <leader>s :update<CR>
+
+" Moving lines
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv

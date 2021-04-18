@@ -12,6 +12,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'jiangmiao/auto-pairs'
   " Prettier
   Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/0.x' }
+  " ESLint
+  Plug 'eslint/eslint' 
   " Themes
   Plug 'joshdick/onedark.vim'
   Plug 'arcticicestudio/nord-vim'

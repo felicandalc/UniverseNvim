@@ -23,4 +23,4 @@ let g:prettier#quickfix_enabled = 0
 let g:prettier#config#tab_width = '4'
 
 " Use tabs
-let g:prettier#config#use_tabs = true
+let g:prettier#config#use_tabs = 'true'

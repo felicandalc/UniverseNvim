@@ -27,8 +27,8 @@ endfunction
 nmap <C-n> :NERDTreeToggle<cr>
 
 " Comment line
-vmap ++ <plug>NERDCommenterToggle
-nmap ++ <plug>NERDCommenterToggle
+vmap <C-k> <plug>NERDCommenterToggle
+nmap <C-k> <plug>NERDCommenterToggle
 
 " Show hidden files
 let NERDTreeShowHidden = 1

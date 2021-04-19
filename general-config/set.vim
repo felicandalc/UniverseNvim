@@ -8,3 +8,6 @@ set autochdir
 
 " Disable next line autocomment
 autocmd BufNewFile,BufRead * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Split always to right
+set splitright

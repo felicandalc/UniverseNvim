@@ -6,6 +6,9 @@ set shiftwidth=2
 set expandtab
 set autochdir
 
+" Disable bell
+set visualbell
+
 " Disable next line autocomment
 autocmd BufNewFile,BufRead * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 

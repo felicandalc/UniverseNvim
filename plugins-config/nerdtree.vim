@@ -32,3 +32,6 @@ nmap ++ <plug>NERDCommenterToggle
 
 " Show hidden files
 let NERDTreeShowHidden = 1
+
+" Hide node_modules
+let NERDTreeIgnore=['node_modules', '.git']

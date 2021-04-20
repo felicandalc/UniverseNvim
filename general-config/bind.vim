@@ -35,3 +35,6 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 " Navigation to first line
 nmap j + 
 nmap k -
+
+" Close current buffer
+noremap <C-w> :bdelete<CR>

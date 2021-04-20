@@ -38,3 +38,7 @@ nmap k -
 
 " Close current buffer
 noremap <C-w> :bdelete<CR>
+
+" Move between buffers
+noremap <C-a> :bprevious<CR>
+noremap <C-s> :bnext<CR>

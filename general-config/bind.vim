@@ -32,10 +32,6 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
-" Navigation to first line
-nmap j + 
-nmap k -
-
 " Close current buffer
 noremap <C-w> :bdelete<CR>
 

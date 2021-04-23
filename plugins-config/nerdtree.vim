@@ -5,7 +5,7 @@ augroup NERDTreeHijackNetrw
 augroup END
 
 " sync open file with NERDTree
- " Check if NERDTree is open or active
+" Check if NERDTree is open or active
 function! IsNERDTreeOpen()        
   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
 endfunction

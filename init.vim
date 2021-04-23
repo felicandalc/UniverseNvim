@@ -13,6 +13,7 @@ source ~/.config/nvim/plugins-config/nerdtree.vim
 source ~/.config/nvim/plugins-config/coc.vim
 source ~/.config/nvim/plugins-config/prettier.vim
 source ~/.config/nvim/plugins-config/airline.vim
+source ~/.config/nvim/plugins-config/emmet.vim
 
 " General config
 source ~/.config/nvim/general-config/initial.vim

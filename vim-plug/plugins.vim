@@ -52,5 +52,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'ctrlpvim/ctrlp.vim'
   " Surround
   Plug 'tpope/vim-surround'
+  " Emmet
+  Plug 'mattn/emmet-vim'
   
 call plug#end()

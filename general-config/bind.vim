@@ -33,7 +33,7 @@ vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Close current buffer
-noremap <C-w> :bdelete<CR>
+noremap <C-w>e :bdelete<CR>
 
 " Move between buffers
 noremap <C-a> :bprevious<CR>

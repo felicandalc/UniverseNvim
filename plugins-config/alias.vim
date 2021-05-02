@@ -1,1 +1,1 @@
-Alias ! AsyncRun
+Alias a AsyncRun

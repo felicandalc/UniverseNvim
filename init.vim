@@ -16,6 +16,7 @@ source ~/.config/nvim/plugins-config/airline.vim
 source ~/.config/nvim/plugins-config/emmet.vim
 source ~/.config/nvim/plugins-config/asyncrun.vim
 source ~/.config/nvim/plugins-config/alias.vim
+source ~/.config/nvim/plugins-config/startify.vim
 
 " General config
 source ~/.config/nvim/general-config/initial.vim

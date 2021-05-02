@@ -58,5 +58,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'skywind3000/asyncrun.vim'
   " Alias
   Plug 'Konfekt/vim-alias'
+  " Startup
+  Plug 'mhinz/vim-startify'
   
 call plug#end()

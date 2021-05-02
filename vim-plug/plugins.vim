@@ -54,5 +54,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'tpope/vim-surround'
   " Emmet
   Plug 'mattn/emmet-vim'
+  " Asyncrun
+  Plug 'skywind3000/asyncrun.vim'
+  " Alias
+  Plug 'Konfekt/vim-alias'
   
 call plug#end()

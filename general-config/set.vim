@@ -14,3 +14,6 @@ autocmd BufNewFile,BufRead * setlocal formatoptions-=c formatoptions-=r formatop
 
 " Split always to right
 set splitright
+
+" Prevent line break
+set nowrap

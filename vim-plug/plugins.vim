@@ -1,7 +1,9 @@
 " auto-install vim-plug
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+let _vim = stdpath('config')
+if empty(glob(_vim . '/autoload/plug.vim'))
+    silent execute '!curl -fLo ' . _vim . '/autoload/plug.vim --create-dirs '
+        \ 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $HOME/.config/nvim/init.vim
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
@@ -13,7 +15,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Prettier
   Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'branch': 'release/0.x' }
   " ESLint
-  Plug 'eslint/eslint' 
+  Plug 'eslint/eslint'
   " Themes
   Plug 'joshdick/onedark.vim'
   Plug 'arcticicestudio/nord-vim'
@@ -28,7 +30,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'scrooloose/nerdcommenter'
   " Go
-  Plug 'godoctor/godoctor.vim' 
+  Plug 'godoctor/godoctor.vim'
   Plug 'fatih/vim-go'
   Plug 'Shougo/deoplete.nvim'
   Plug 'zchee/deoplete-go'
@@ -36,10 +38,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Airline
   Plug 'vim-airline/vim-airline'
   " JavaScript
-  Plug 'pangloss/vim-javascript' 
+  Plug 'pangloss/vim-javascript'
   " TypeScript
   Plug 'leafgarland/typescript-vim'
-  " JSX  
+  " JSX
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'peitalin/vim-jsx-typescript'
   " Styled components
@@ -60,5 +62,5 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'Konfekt/vim-alias'
   " Startup
   Plug 'mhinz/vim-startify'
-  
+
 call plug#end()

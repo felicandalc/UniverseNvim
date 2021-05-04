@@ -51,9 +51,9 @@ _Nota: hay plugins que se borrarán y agregarán, debido a funcionalidad repetid
   <summary>coc-vim</summary>
 
   [repo](https://github.com/neoclide/coc.nvim)
-    * coc-tsserver
-    * coc-angular
-    * coc-css
+  * coc-tsserver
+  * coc-angular
+  * coc-css
 </details>
 
 ##### Profiling

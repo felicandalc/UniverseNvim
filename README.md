@@ -2,6 +2,15 @@
 
 Configuración de Neovim propia, está siendo constantemente iterada.
 
+
+#### Portabilidad
+
+La configuración es completamente portable, sin embargo, usa curl y Windows nativamente ejecuta un comando distinto a curl bajo a un alias, es necesario removerlo.
+
+> Remove-Item alias:curl
+
+Y para removerlo permanentemente, no solo durante la sesión, revisa esta [pregunta de StackExchange](https://superuser.com/questions/883914/how-do-i-permanently-remove-a-default-powershell-alias)
+
 #### Themes
 _Nota: El default theme puede variar._
 
@@ -13,14 +22,6 @@ Out of the box themes:
 ```bash
 :colorscheme onedark | nord
 ```
-
-#### Portabilidad
-
-La configuración es completamente portable, sin embargo, usa curl y Windows nativamente ejecuta un comando distinto a curl bajo a un alias, es necesario removerlo.
-
-> Remove-Item alias:curl
-
-Y para removerlo permanentemente, no solo durante la sesión, revisa esta [pregunta de StackExchange](https://superuser.com/questions/883914/how-do-i-permanently-remove-a-default-powershell-alias)
 
 #### Plugins
 _El plugin manager usado es [vim-plug](https://github.com/junegunn/vim-plug)._<br>

@@ -61,3 +61,7 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 " - :edit a folder to open a file browser
 " - <CR>/v/t to open in an h-split/v-plit/tab
 " - check |netrw-brose-maps| for more mappings
+
+" SAVING FOLDINGS AUTOMATICALY:
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview

@@ -63,5 +63,6 @@ let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 " - check |netrw-brose-maps| for more mappings
 
 " SAVING FOLDINGS AUTOMATICALY:
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
+" TODO: REVIEW
+" autocmd BufWinLeave *.* mkview
+" autocmd BufWinEnter *.* silent loadview

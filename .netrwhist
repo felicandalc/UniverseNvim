@@ -1,3 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/mnt/c/LN/Front/Repos/Frontend/src/features'
+let g:netrw_dirhist_4='/mnt/c/LN/Front/Repos/Frontend/src/features/miCuenta'
+let g:netrw_dirhist_3='/mnt/c/LN/Front/Repos/Frontend/src/features/miCuenta/modules'
+let g:netrw_dirhist_2='/mnt/c/LN/Front/Repos/Frontend/src/features/miCuenta/modules/table'
 let g:netrw_dirhist_1='/home/fcandalcampos'

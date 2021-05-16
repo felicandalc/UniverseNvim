@@ -26,6 +26,7 @@ Out of the box themes:
 #### Plugins
 _El plugin manager usado es [vim-plug](https://github.com/junegunn/vim-plug)._<br>
 _Nota: hay plugins que se borrarán y agregarán, debido a funcionalidad repetida._
+_Nota2: golang is a vim-hexokinase dependency._
 
 1. [vim-polyglot](https://github.com/sheerun/vim-polyglot)
 2. [auto-pairs](https://github.com/jiangmiao/auto-pairs)

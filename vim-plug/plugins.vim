@@ -22,13 +22,21 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " COC
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " NERDTree
-  Plug 'scrooloose/nerdtree'
-  Plug 'Xuyuanp/nerdtree-git-plugin'
-  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-  Plug 'ryanoasis/vim-devicons'
+  " Plug 'scrooloose/nerdtree'
+  " Plug 'Xuyuanp/nerdtree-git-plugin'
+  " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  " Plug 'scrooloose/nerdcommenter'
+  " Devicons
+  " Plug 'ryanoasis/vim-devicons'
+  " NERDFont
+  Plug 'lambdalisue/nerdfont.vim'
+  " Fern
+  Plug 'lambdalisue/fern.vim'
+  Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+  Plug 'lambdalisue/fern-git-status.vim'
+  " Git
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
-  Plug 'scrooloose/nerdcommenter'
   " Go
   Plug 'godoctor/godoctor.vim'
   Plug 'fatih/vim-go'

@@ -19,15 +19,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Themes
   Plug 'joshdick/onedark.vim'
   Plug 'arcticicestudio/nord-vim'
+  Plug 'dracula/vim'
+  Plug 'gosukiwi/vim-atom-dark'
   " COC
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  " NERDTree
-  " Plug 'scrooloose/nerdtree'
-  " Plug 'Xuyuanp/nerdtree-git-plugin'
-  " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-  " Plug 'scrooloose/nerdcommenter'
-  " Devicons
-  " Plug 'ryanoasis/vim-devicons'
   " NERDFont
   Plug 'lambdalisue/nerdfont.vim'
   " Fern
@@ -53,6 +48,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " JSX
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'peitalin/vim-jsx-typescript'
+  " JSDoc
+  Plug 'heavenshell/vim-jsdoc', { 
+    \ 'for': ['javascript', 'javascript.jsx','typescript'], 
+    \ 'do': 'make install'
+  \}
   " Styled components
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   " GraphQL

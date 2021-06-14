@@ -1,5 +1,5 @@
 " Search from
-let g:ctrlp_working_path_mode = 'wa'
+" let g:ctrlp_working_path_mode = 'wa'
 
 " Additional markers than .git
 let g:ctrlp_root_markers = 'package.json'

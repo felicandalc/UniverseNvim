@@ -71,5 +71,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'Konfekt/vim-alias'
   " Startup
   Plug 'mhinz/vim-startify'
+  " Prisma
+  Plug 'pantharshit00/vim-prisma'
 
 call plug#end()

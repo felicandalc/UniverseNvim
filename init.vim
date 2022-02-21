@@ -10,6 +10,7 @@ source ~/.config/nvim/themes/onedark.vim
 source ~/.config/nvim/plugins-config/controlp.vim
 source ~/.config/nvim/plugins-config/fern.vim
 source ~/.config/nvim/plugins-config/coc.vim
+source ~/.config/nvim/plugins-config/go.vim  
 source ~/.config/nvim/plugins-config/prettier.vim
 source ~/.config/nvim/plugins-config/airline.vim
 source ~/.config/nvim/plugins-config/emmet.vim

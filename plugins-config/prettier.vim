@@ -11,7 +11,7 @@ let g:prettier#exec_cmd_async = 1
 let g:prettier#autoformat_config_present = 1
 
 " Name of config files
-let g:prettier#autoformat_config_files = ['.prettierrc']
+let g:prettier#autoformat_config_files = ['.prettierrc', '.prettierrc.js', '.prettierrc.json']
 
 " Override config with project's one
 let g:prettier#config#config_precedence = 'file-override'

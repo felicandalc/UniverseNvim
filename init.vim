@@ -19,6 +19,9 @@ source ~/.config/nvim/plugins-config/alias.vim
 source ~/.config/nvim/plugins-config/startify.vim
 source ~/.config/nvim/plugins-config/hexokinase.vim
 
+" Detect
+source ~/.config/nvim/ftdetect/groovy.vim
+
 " General config
 source ~/.config/nvim/general-config/initial.vim
 source ~/.config/nvim/general-config/bind.vim

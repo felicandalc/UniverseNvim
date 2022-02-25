@@ -33,6 +33,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Git
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
+  Plug 'APZelos/blamer.nvim'
   " Go
   Plug 'godoctor/godoctor.vim'
   Plug 'fatih/vim-go'

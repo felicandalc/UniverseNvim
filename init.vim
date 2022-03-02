@@ -4,7 +4,7 @@
 source ~/.config/nvim/vim-plug/plugins.vim
 
 " Load theme
-source ~/.config/nvim/themes/onedark.vim
+source ~/.config/nvim/themes/tokyonight.vim
 
 " Plugins config
 source ~/.config/nvim/plugins-config/controlp.vim

@@ -21,6 +21,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'arcticicestudio/nord-vim'
   Plug 'dracula/vim'
   Plug 'gosukiwi/vim-atom-dark'
+  Plug 'ghifarit53/tokyonight-vim'
   " COC
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " NERDFont
@@ -77,5 +78,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " FZF
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  " Commentaries
+  Plug 'tpope/vim-commentary'
 
 call plug#end()

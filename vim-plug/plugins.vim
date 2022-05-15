@@ -80,5 +80,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'junegunn/fzf.vim'
   " Commentaries
   Plug 'tpope/vim-commentary'
+  " Tables
+  Plug 'dhruvasagar/vim-table-mode'
 
 call plug#end()

@@ -18,6 +18,7 @@ source ~/.config/nvim/plugins-config/asyncrun.vim
 source ~/.config/nvim/plugins-config/alias.vim
 source ~/.config/nvim/plugins-config/startify.vim
 source ~/.config/nvim/plugins-config/hexokinase.vim
+source ~/.config/nvim/plugins-config/table-mode.vim
 
 " Detect
 source ~/.config/nvim/ftdetect/groovy.vim

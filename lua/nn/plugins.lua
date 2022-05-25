@@ -54,6 +54,8 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline"
   use "saadparwaiz1/cmp_luasnip"
   use "David-Kunz/cmp-npm"
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
 
   use "L3MON4D3/LuaSnip" 
   use "rafamadriz/friendly-snippets"
@@ -63,8 +65,8 @@ return packer.startup(function(use)
   use "folke/tokyonight.nvim"
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "neovim/nvim-lspconfig"
+  use "williamboman/nvim-lsp-installer" 
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

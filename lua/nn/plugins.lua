@@ -62,6 +62,10 @@ return packer.startup(function(use)
   use "lunarvim/colorschemes" -- Lots of colorschemes
   use "folke/tokyonight.nvim"
 
+  -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

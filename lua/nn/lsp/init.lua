@@ -5,3 +5,4 @@ end
 
 require("nn.lsp.lsp-installer")
 require("nn.lsp.handlers").setup()
+require "nn.lsp.null-ls"

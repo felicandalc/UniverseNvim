@@ -43,7 +43,7 @@ keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 keymap("n", "<c-w>e", ":bdelete<CR>", opts)
 
 -- Save file
-keymap("n", "<leader>s", ":w<CR>", opts)
+keymap("n", "<c-s>", ":w<CR>", opts)
 
 -- Unhighlight search
 keymap("n", "<CR>", ":noh<CR>", opts)

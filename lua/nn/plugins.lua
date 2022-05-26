@@ -50,6 +50,7 @@ return packer.startup(function(use)
   use "windwp/nvim-ts-autotag" -- Autoclose and autorename html tags
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use 'lewis6991/impatient.nvim'
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- CMP
   use "hrsh7th/nvim-cmp"

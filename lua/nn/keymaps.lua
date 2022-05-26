@@ -39,6 +39,9 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 
+-- Buffers
+keymap("n", "<c-w>e", ":bdelete<CR>", opts)
+
 -- Save file
 keymap("n", "<leader>s", ":w<CR>", opts)
 

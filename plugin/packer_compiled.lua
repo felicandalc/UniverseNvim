@@ -222,6 +222,11 @@ _G.packer_plugins = {
     path = "/home/nn/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["project.nvim"] = {
+    loaded = true,
+    path = "/home/nn/.local/share/nvim/site/pack/packer/start/project.nvim",
+    url = "https://github.com/ahmedkhalf/project.nvim"
+  },
   ["telescope-media-files.nvim"] = {
     loaded = true,
     path = "/home/nn/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim",

@@ -47,6 +47,7 @@ return packer.startup(function(use)
   use "tpope/vim-endwise" -- Help to end certain structures automatically
   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'} -- Live preview markdown on browser
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+  use "windwp/nvim-ts-autotag" -- Autoclose and autorename html tags
 
   -- CMP
   use "hrsh7th/nvim-cmp"

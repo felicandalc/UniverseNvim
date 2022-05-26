@@ -62,7 +62,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
 
-  use "L3MON4D3/LuaSnip" 
+  use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
 
   -- Colorschemes
@@ -106,6 +106,10 @@ return packer.startup(function(use)
 
   -- Project
   use "ahmedkhalf/project.nvim"
+
+  -- Alpha
+  use 'goolord/alpha-nvim'
+  use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

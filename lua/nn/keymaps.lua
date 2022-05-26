@@ -48,9 +48,19 @@ keymap("n", "<c-s>", ":w<CR>", opts)
 -- Unhighlight search
 keymap("n", "<CR>", ":noh<CR>", opts)
 
+-- Copy
+keymap("n", "<c-c>", '"*y :let @+=@*<CR>', opts)
+
+-- Insert two lines
+keymap("n", "<leader>O", "O<ESC>O", opts)
+keymap("n", "<leader>o", "o<CR>", opts)
+
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+
+-- Pasting
+keymap("i", "<c-v>", '"+p', opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -62,6 +72,9 @@ keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
 
+-- Copy
+keymap("v", "<c-c>", '"*y :let @+=@*<CR>', opts)
+
 -- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
@@ -71,7 +84,12 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Telescope
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<c-p>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap(
+  "n",
+  "<c-p>",
+  "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+  opts
+)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
 -- Terminal --

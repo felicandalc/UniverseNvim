@@ -40,6 +40,9 @@ configs.setup {
       show_help = '?',
     },
   },
+  autopairs = {
+    enable = true
+  },
   autotag = {
     enable = true,
   },

@@ -276,6 +276,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/nn/.local/share/nvim/site/pack/packer/start/vim-endwise",
     url = "https://github.com/tpope/vim-endwise"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/home/nn/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 

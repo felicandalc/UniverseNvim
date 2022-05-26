@@ -51,6 +51,7 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use 'lewis6991/impatient.nvim'
   use "lukas-reineke/indent-blankline.nvim"
+  use "folke/which-key.nvim"
 
   -- CMP
   use "hrsh7th/nvim-cmp"

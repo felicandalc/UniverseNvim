@@ -46,6 +46,7 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "tpope/vim-endwise" -- Help to end certain structures automatically
   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'} -- Live preview markdown on browser
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
 
   -- CMP
   use "hrsh7th/nvim-cmp"
@@ -66,11 +67,17 @@ return packer.startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig"
-  use "williamboman/nvim-lsp-installer" 
+  use "williamboman/nvim-lsp-installer"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use 'nvim-telescope/telescope-media-files.nvim'
+
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

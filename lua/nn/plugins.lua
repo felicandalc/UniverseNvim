@@ -82,6 +82,7 @@ return packer.startup(function(use)
   }
   use "nvim-treesitter/playground"
   use "p00f/nvim-ts-rainbow"
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- Git
   use "lewis6991/gitsigns.nvim"

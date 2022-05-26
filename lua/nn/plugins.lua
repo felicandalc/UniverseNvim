@@ -49,6 +49,7 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "windwp/nvim-ts-autotag" -- Autoclose and autorename html tags
   use "numToStr/Comment.nvim" -- Easily comment stuff
+  use 'lewis6991/impatient.nvim'
 
   -- CMP
   use "hrsh7th/nvim-cmp"

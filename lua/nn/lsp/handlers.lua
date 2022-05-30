@@ -94,6 +94,9 @@ M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.server_capabilities.document_formatting = false
   end
+  if client.name == "gopls" then
+    vim.api.nvim_command("au BufWritePost <buffer> lua vim.lsp.buf.format()")
+  end
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 end

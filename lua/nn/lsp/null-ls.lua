@@ -17,8 +17,6 @@ null_ls.setup({
     formatting.black,
     formatting.stylua,
     diagnostics.flake8,
-    null_ls.builtins.formatting.goimports,
-    null_ls.builtins.formatting.gofumpt,
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then

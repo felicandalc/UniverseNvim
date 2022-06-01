@@ -92,7 +92,7 @@ end
 
 M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.document_formatting = false
   end
   if client.name == "gopls" then
     vim.api.nvim_command("au BufWritePost <buffer> lua vim.lsp.buf.format()")

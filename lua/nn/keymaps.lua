@@ -48,8 +48,10 @@ keymap("n", "<c-s>", ":w<CR>", opts)
 -- Unhighlight search
 keymap("n", "<CR>", ":noh<CR>", opts)
 
--- Copy
+-- Copy & Pasting
 keymap("n", "<c-c>", '"*y :let @+=@*<CR>', opts)
+keymap("n", "d", '"_d', opts)
+keymap("n", "c", '"_c', opts)
 
 -- Insert two lines
 keymap("n", "<leader>O", "O<ESC>O", opts)
@@ -59,7 +61,7 @@ keymap("n", "<leader>o", "o<CR>", opts)
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
 
--- Pasting
+-- Copy + Pasting
 keymap("i", "<c-v>", '"+p', opts)
 
 -- Visual --

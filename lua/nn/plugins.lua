@@ -69,6 +69,8 @@ return packer.startup(function(use)
 	-- Colorschemes
 	use("lunarvim/colorschemes") -- Lots of colorschemes
 	use("folke/tokyonight.nvim")
+	use("Mofiqul/dracula.nvim")
+	use("shaunsingh/nord.nvim")
 
 	-- LSP
 	use("neovim/nvim-lspconfig")
@@ -90,6 +92,17 @@ return packer.startup(function(use)
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
+	use({
+		"pwntester/octo.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+			"kyazdani42/nvim-web-devicons",
+		},
+		config = function()
+			require("octo").setup()
+		end,
+	})
 
 	-- Nvim tree
 	use("kyazdani42/nvim-web-devicons")
@@ -110,6 +123,7 @@ return packer.startup(function(use)
 
 	-- Alpha
 	use("goolord/alpha-nvim")
+	-- Fix cursor hold | Issue #12587
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 
 	-- NeoGen (annotation toolkit)

@@ -205,6 +205,11 @@ _G.packer_plugins = {
     path = "/home/nn/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-jenkinsfile-linter"] = {
+    loaded = true,
+    path = "/home/nn/.local/share/nvim/site/pack/packer/start/nvim-jenkinsfile-linter",
+    url = "https://github.com/ckipp01/nvim-jenkinsfile-linter"
+  },
   ["nvim-lsp-installer"] = {
     loaded = true,
     path = "/home/nn/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",

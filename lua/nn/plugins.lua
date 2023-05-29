@@ -94,6 +94,8 @@ return packer.startup(function(use)
 	use("p00f/nvim-ts-rainbow")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
+	use({ "ckipp01/nvim-jenkinsfile-linter", requires = { "nvim-lua/plenary.nvim" } })
+
 	-- Git
 	use("lewis6991/gitsigns.nvim")
 	use({

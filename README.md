@@ -1,95 +1,81 @@
-## Neovim Configuration
+<h1 align="center">Custom configuration</h1>
 
-Configuración de Neovim propia, está siendo constantemente iterada.
+<div align="center">
+    <a href="https://github.com/felicandalc/nvim/releases/latest">
+        <img alt="Latest release" src="https://img.shields.io/github/v/release/felicandalc/nvim?style=flat-square&logo=starship&color=DCD7C9&labelColor=2C3639&logoColor=DCD7C9" />
+    </a>
+    <img alt="License" src="https://img.shields.io/github/license/felicandalc/nvim?style=flat-square&color=DCD7C9&labelColor=2C3639" />
+    <img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square&color=DCD7C9&labelColor=2C3639" />
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/felicandalc/nvim/master?style=flat-square&color=DCD7C9&labelColor=2C3639" />
+    <img alt="Neovim version" src="https://img.shields.io/badge/Neovim->=0.9-57A143?style=flat-square&logo=neovim&color=DCD7C9&labelColor=2C3639" />
+</div>
 
+<hr / >
+<br />
 
-#### Portabilidad
-
-La configuración es completamente portable, sin embargo, usa curl y Windows nativamente ejecuta un comando distinto a curl bajo a un alias, es necesario removerlo.
-
-> Remove-Item alias:curl
-
-Y para removerlo permanentemente, no solo durante la sesión, revisa esta [pregunta de StackExchange](https://superuser.com/questions/883914/how-do-i-permanently-remove-a-default-powershell-alias)
-
-#### Themes
-_Nota: El default theme puede variar._
-
-Out of the box themes:
-
-- Nord.
-- One dark.
-
-```bash
-:colorscheme onedark | nord
-```
-
-#### Plugins
-_El plugin manager usado es [vim-plug](https://github.com/junegunn/vim-plug)._<br>
-_Nota: hay plugins que se borrarán y agregarán, debido a funcionalidad repetida._
-_Nota2: golang is a vim-hexokinase dependency._
-
-1. [vim-polyglot](https://github.com/sheerun/vim-polyglot)
-2. [auto-pairs](https://github.com/jiangmiao/auto-pairs)
-3. [vim-prettier](https://github.com/prettier/vim-prettier)
-4. [eslint](https://github.com/eslint/eslint)
-5. [NERDTree](https://github.com/preservim/nerdtree)
-6. [NERDTree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)
-7. [vim-NERDTree-syntax-highlight](vim-nerdtree-syntax-highlight)
-8. [vim-devicons](https://github.com/ryanoasis/vim-devicons)
-9. [vim-fugitive](https://github.com/tpope/vim-fugitive)
-10. [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
-11. [NERDCommenter](https://github.com/preservim/nerdcommenter)
-12. [godoctor](https://github.com/godoctor/godoctor.vim)
-13. [vim-go](https://github.com/fatih/vim-go)
-14. [deoplete-go](https://github.com/deoplete-plugins/deoplete-go)
-15. [vim-godebug](https://github.com/jodosha/vim-godebug)
-16. [vim-airline](https://github.com/vim-airline/vim-airline)
-17. [vim-javascript](https://github.com/pangloss/vim-javascript)
-18. [typescript-vim](https://github.com/leafgarland/typescript-vim)
-19. [vim-jsx-pretty](https://github.com/MaxMEllon/vim-jsx-pretty)
-20. [vim-jsx-typescript](https://github.com/peitalin/vim-jsx-typescript)
-21. [vim-styled-components](https://github.com/styled-components/vim-styled-components)
-22. [vim-graphql](https://github.com/jparise/vim-graphql)
-23. [vim-hexokinase](https://github.com/RRethy/vim-hexokinase)
-24. [ctrlp](https://github.com/kien/ctrlp.vim)
-25. [vim-surround](https://github.com/tpope/vim-surround)
-26. [emmet-vim](https://github.com/mattn/emmet-vim)
-27. [asyncrun](https://github.com/skywind3000/asyncrun.vim)
-28. [vim-alias](https://github.com/Konfekt/vim-alias)
-29. [vim-startify](https://github.com/mhinz/vim-startify)
 <details>
-  <summary>coc-vim</summary>
-
-  [repo](https://github.com/neoclide/coc.nvim)
-  * coc-tsserver
-  * coc-angular
-  * coc-css
+  <summary>Contents</summary>
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li>
+      Getting Started
+        <ul>
+          <li><a href="#pre-requisites">Pre-requisites</a></li>
+          <li><a href="#installation">Installation</a></li>
+        </ul>
+    </li>
+  </ul>
 </details>
 
-#### Profiling
+### Introduction
 
-_Nota: Se podría implementar una pequeña función._
+This is a simple and fast Neovim configuration fully written in [Lua](https://www.lua.org/), it is being constantly iterated.
+You can freely use it <strong>out-of-the-box</strong> or you can install it and modify it to your personal requirements.
 
-```bash
-:profile start [NAME].log
-```
+### Pre-requisites
 
-```bash
-:profile func *
-```
+- Check Neovim version, you'll need at least the [latest release](https://github.com/neovim/neovim/releases/tag/stable)
+- Install [Nerd Font](https://www.nerdfonts.com) and set it as your terminal font (optional)
+- Install [Ripgrep](https://github.com/BurntSushi/ripgrep), it is required for Telescope searches (optional)
 
-```bash
-:profile file *
-```
+### Installation
 
-- Realizar acciones
+<details open="open">
+<summary>For Linux/MacOS users</summary>
 
-```bash
-:profile pause
-```
+<br />
 
-- Salir de VIM
+- Create a backup
 
-```bash
-:noautocmd qall! | :qall!1.
-```
+  ```sh
+  mv ~/.config/nvim ~/.config/nvim.bak
+  mv ~/.local/share/nvim ~/.local/share/nvim.bak
+  ```
+
+- Clone configuration
+
+  ```sh
+  git clone https://github.com/felicandalc/nvim ~/.config/nvim
+  ```
+
+</details>
+
+<details>
+<summary>For Windows users</summary>
+
+<br />
+
+- Create a backup
+
+  ```sh
+  Move-Item -Path $HOME\AppData\Local\nvim -Destination $HOME\AppData\Local\nvim.bak
+  Move-Item -Path $HOME\AppData\Local\nvim-data -Destination $HOME\AppData\Local\nvim-data.bak
+  ```
+
+- Clone configuration
+
+  ```sh
+  git clone https://github.com/felicandalc/nvim $HOME\AppData\Local\nvim
+  ```
+
+</details>

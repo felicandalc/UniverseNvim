@@ -4,7 +4,9 @@
     <a href="https://github.com/felicandalc/nvim/releases/latest">
         <img alt="Latest release" src="https://img.shields.io/github/v/release/felicandalc/nvim?style=flat-square&logo=starship&color=DCD7C9&labelColor=2C3639&logoColor=DCD7C9" />
     </a>
+    <a href="https://github.com/felicandalc/nvim/LICENSE">
     <img alt="License" src="https://img.shields.io/github/license/felicandalc/nvim?style=flat-square&color=DCD7C9&labelColor=2C3639" />
+    </a>
     <img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square&color=DCD7C9&labelColor=2C3639" />
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/felicandalc/nvim/master?style=flat-square&color=DCD7C9&labelColor=2C3639" />
     <img alt="Neovim version" src="https://img.shields.io/badge/Neovim->=0.9-57A143?style=flat-square&logo=neovim&color=DCD7C9&labelColor=2C3639" />

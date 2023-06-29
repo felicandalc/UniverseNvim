@@ -7,7 +7,7 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
+  pull_request: write
 
 jobs:
   generate-changelog:
@@ -20,6 +20,8 @@ jobs:
         with:
           REPO_NAME: 'felicandalc/nvim'
           ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          BRANCH: 'master'
+          PULL_REQUEST: 'master'
           PATH: 'CHANGELOG.md'
           COMMIT_MESSAGE: 'docs(CHANGELOG): update release notes'
           TYPE: 'feat:Feature,fix:Bug Fixes,docs:Documentation,refactor:Refactor,build:Dependencies'

@@ -17,3 +17,5 @@ jobs:
         with:
           release-type: simple
           package-name: UniverseVim
+          pull-request-header: '🌌 New release'
+          pull-request-title-pattern: 'chore(release): ${version}'

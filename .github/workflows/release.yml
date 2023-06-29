@@ -3,25 +3,17 @@ name: Release
 on:
   push:
     branches:
-      - master
+      - main
 
 permissions:
   contents: write
-  pull_request: write
+  pull-requests: write
 
 jobs:
-  generate-changelog:
+  release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: google-github-actions/release-please-action@v3
         with:
-          fetch-depth: 0
-      - uses: BobAnkh/auto-generate-changelog@v1.2.4
-        with:
-          REPO_NAME: 'felicandalc/nvim'
-          ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          BRANCH: 'master'
-          PULL_REQUEST: 'master'
-          PATH: 'CHANGELOG.md'
-          COMMIT_MESSAGE: 'docs(CHANGELOG): update release notes'
-          TYPE: 'feat:Feature,fix:Bug Fixes,docs:Documentation,refactor:Refactor,build:Dependencies'
+          release-type: simple
+          package-name: UniverseVim

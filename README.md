@@ -31,7 +31,7 @@
 
 ### Introduction
 
-This is a simple and fast Neovim configuration fully written in [Lua](https://www.lua.org/), it is being constantly iterated.
+This is a lightweight and fast Neovim configuration fully written in [Lua](https://www.lua.org/), it is being constantly iterated.
 You can freely use it <strong>out-of-the-box</strong> or you can install it and modify it to your personal requirements.
 
 ### Pre-requisites

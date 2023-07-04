@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/felicandalc/UniverseNvim/compare/v1.0.0...v1.1.0) (2023-07-04)
+
+
+### Features
+
+* **lazy.nvim:** replaced packer with lazy.nvim to lazy load plugins and decrease startup time ([c19dc5f](https://github.com/felicandalc/UniverseNvim/commit/c19dc5f1f07f7efe5c1440f20dcb6a384dc6a2d9))
+
 ## 1.0.0 (2023-06-29)
 
 

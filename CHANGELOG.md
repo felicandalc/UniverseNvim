@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/felicandalc/UniverseNvim/compare/v1.2.0...v1.2.1) (2023-07-13)
+
+
+### Bug Fixes
+
+* **markdown-preview:** added `ft` and `lazy` to `markdown-preview.nvim` plugin in `lazy.nvim` table ([fd2addf](https://github.com/felicandalc/UniverseNvim/commit/fd2addf478d39467630074a5611494267ebc3fcd))
+
 ## [1.2.0](https://github.com/felicandalc/UniverseNvim/compare/v1.1.0...v1.2.0) (2023-07-13)
 
 

@@ -1,4 +1,4 @@
-<h1 align="center">Custom configuration</h1>
+<h1 align="center">UniverseNvim</h1>
 
 <div align="center">
     <a href="https://github.com/felicandalc/nvim/releases/latest">

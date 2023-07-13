@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/felicandalc/UniverseNvim/compare/v1.1.0...v1.2.0) (2023-07-13)
+
+
+### Features
+
+* **lazy.nvim:** added `lazy-lock.json` to source control ([a44f620](https://github.com/felicandalc/UniverseNvim/commit/a44f620e090248428632bf36f1fd495d0cd8484c))
+
 ## [1.1.0](https://github.com/felicandalc/UniverseNvim/compare/v1.0.0...v1.1.0) (2023-07-04)
 
 

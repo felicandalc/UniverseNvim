@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/felicandalc/UniverseNvim/compare/v1.2.1...v1.2.2) (2023-08-11)
+
+
+### Bug Fixes
+
+* **treesitter:** ignored objc, throws error on Windows ([4f7f279](https://github.com/felicandalc/UniverseNvim/commit/4f7f2790a8d250d52628872b95de1abb51b57742))
+
 ## [1.2.1](https://github.com/felicandalc/UniverseNvim/compare/v1.2.0...v1.2.1) (2023-07-13)
 
 

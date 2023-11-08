@@ -29,7 +29,7 @@ lazy.setup({
 	"windwp/nvim-ts-autotag", -- Autoclose and autorename html tags
 	"numToStr/Comment.nvim", -- Easily comment stuff
 	"lewis6991/impatient.nvim",
-	"lukas-reineke/indent-blankline.nvim",
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	"folke/which-key.nvim",
 	"jxnblk/vim-mdx-js",
 

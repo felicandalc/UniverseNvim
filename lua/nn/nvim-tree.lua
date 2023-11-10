@@ -1,4 +1,6 @@
 vim.g.nvim_tree_folder_modifier = ":t"
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- Auto close
 vim.api.nvim_create_autocmd("BufEnter", {
@@ -8,15 +10,9 @@ vim.api.nvim_create_autocmd("BufEnter", {
 
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
+	vim.notify("NvimTree could not be loaded!", "error")
 	return
 end
-
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-	return
-end
-
-local tree_cb = nvim_tree_config.nvim_tree_callback
 
 local function on_attach(bufnr)
 	local api = require("nvim-tree.api")
@@ -132,11 +128,7 @@ nvim_tree.setup({
 	},
 	view = {
 		width = 30,
-		hide_root_folder = false,
 		side = "left",
-		mappings = {
-			custom_only = false,
-		},
 		number = false,
 		relativenumber = false,
 	},
@@ -154,6 +146,7 @@ nvim_tree.setup({
 		},
 	},
 	renderer = {
+		root_folder_label = "",
 		highlight_git = true,
 		icons = {
 			show = {

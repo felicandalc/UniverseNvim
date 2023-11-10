@@ -6,19 +6,18 @@ if not vim.loop.fs_stat(lazypath) then
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
+		"--branch=stable",
 		lazypath,
 	})
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Use a protected call so we don't error out on first use
 local status_ok, lazy = pcall(require, "lazy")
 if not status_ok then
+	vim.notify("Lazy could not be loaded!", "error")
 	return
 end
 
--- Install your plugins here
 lazy.setup({
 	-- General
 	"nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
@@ -29,7 +28,7 @@ lazy.setup({
 	"windwp/nvim-ts-autotag", -- Autoclose and autorename html tags
 	"numToStr/Comment.nvim", -- Easily comment stuff
 	"lewis6991/impatient.nvim",
-	"lukas-reineke/indent-blankline.nvim",
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	"folke/which-key.nvim",
 	"jxnblk/vim-mdx-js",
 
@@ -53,9 +52,21 @@ lazy.setup({
 	"shaunsingh/nord.nvim",
 
 	-- LSP
+	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
-	"williamboman/nvim-lsp-installer",
 	"jose-elias-alvarez/null-ls.nvim", -- For formatters and linters
+	{
+		"jay-babu/mason-null-ls.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		dependencies = {
+			"williamboman/mason.nvim",
+			"jose-elias-alvarez/null-ls.nvim",
+		},
+		config = function()
+			require("nn.lsp.null-ls") -- require your null-ls config here (example below)
+		end,
+	},
 
 	-- Telescope
 	"nvim-telescope/telescope.nvim",
@@ -105,8 +116,9 @@ lazy.setup({
 	-- Project
 	"ahmedkhalf/project.nvim",
 
-	-- Alpha
+	-- Initial screen
 	"goolord/alpha-nvim",
+
 	-- Fix cursor hold | Issue #12587
 	"antoinemadec/FixCursorHold.nvim", -- This is needed to fix lsp doc highlight
 
@@ -128,4 +140,7 @@ lazy.setup({
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
+
+	-- Notifications
+	"rcarriga/nvim-notify",
 })

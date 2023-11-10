@@ -29,7 +29,7 @@ lazy.setup({
 	"windwp/nvim-ts-autotag", -- Autoclose and autorename html tags
 	"numToStr/Comment.nvim", -- Easily comment stuff
 	"lewis6991/impatient.nvim",
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	"folke/which-key.nvim",
 	"jxnblk/vim-mdx-js",
 
@@ -53,10 +53,21 @@ lazy.setup({
 	"shaunsingh/nord.nvim",
 
 	-- LSP
+	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
-  "williamboman/mason.nvim",
-  "williamboman/mason-lspconfig.nvim",
 	"jose-elias-alvarez/null-ls.nvim", -- For formatters and linters
+	{
+		"jay-babu/mason-null-ls.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		dependencies = {
+			"williamboman/mason.nvim",
+			"jose-elias-alvarez/null-ls.nvim",
+		},
+		config = function()
+			require("nn.lsp.null-ls") -- require your null-ls config here (example below)
+		end,
+	},
 
 	-- Telescope
 	"nvim-telescope/telescope.nvim",
@@ -129,4 +140,7 @@ lazy.setup({
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
+
+	-- Notifications
+	"rcarriga/nvim-notify",
 })

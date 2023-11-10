@@ -8,11 +8,13 @@ vim.api.nvim_create_autocmd("BufEnter", {
 
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
+  vim.notify("NvimTree could not be loaded!", "error")
 	return
 end
 
 local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
 if not config_status_ok then
+  vim.notify("NvimTree config could not be loaded!", "error")
 	return
 end
 

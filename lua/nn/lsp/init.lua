@@ -1,8 +1,9 @@
+require("nn.lsp.mason")
+
 local status_ok, _ = pcall(require, "lspconfig")
 if not status_ok then
-  return
+	vim.notify("LSPConfig could not be loaded!", "error")
+	return
 end
 
-require("nn.lsp.mason")
 require("nn.lsp.handlers").setup()
-require("nn.lsp.null-ls")

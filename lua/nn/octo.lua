@@ -1,4 +1,11 @@
-require("octo").setup({
+local status_ok, octo = pcall(require, "octo")
+
+if not status_ok then
+	vim.notify("Octo could not be loaded!")
+	return
+end
+
+octo.setup({
 	default_remote = { "upstream", "origin" }, -- order to try remotes
 	ssh_aliases = {}, -- SSH aliases. e.g. `ssh_aliases = {["github.com-work"] = "github.com"}`
 	reaction_viewer_hint_icon = "", -- marker for user reactions
@@ -11,7 +18,7 @@ require("octo").setup({
 	snippet_context_lines = 4, -- number or lines around commented lines
 	file_panel = {
 		size = 10, -- changed files panel rows
-		use_icons = true,                       -- use web-devicons in file panel (if false, nvim-web-devicons does not need to be installed)
+		use_icons = true, -- use web-devicons in file panel (if false, nvim-web-devicons does not need to be installed)
 	},
 	mappings = {
 		issue = {

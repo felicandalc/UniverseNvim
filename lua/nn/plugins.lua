@@ -94,9 +94,6 @@ lazy.setup({
 			"nvim-telescope/telescope.nvim",
 			"kyazdani42/nvim-web-devicons",
 		},
-		config = function()
-			require("octo").setup()
-		end,
 	},
 
 	-- Nvim tree

@@ -1,5 +1,6 @@
 local status_ok, project = pcall(require, "project_nvim")
 if not status_ok then
+	vim.notify("Project could not be loaded!", "error")
 	return
 end
 project.setup({
@@ -37,12 +38,13 @@ project.setup({
 
 	---@type string
 	---@usage path to store the project history for use in telescope
-  datapath = vim.fn.stdpath("data"),
+	datapath = vim.fn.stdpath("data"),
 })
 
 local tele_status_ok, telescope = pcall(require, "telescope")
 if not tele_status_ok then
+	vim.notify("Telescope could not be loaded!", "error")
 	return
 end
 
-telescope.load_extension('projects')
+telescope.load_extension("projects")

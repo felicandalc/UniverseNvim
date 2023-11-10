@@ -6,19 +6,18 @@ if not vim.loop.fs_stat(lazypath) then
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
+		"--branch=stable",
 		lazypath,
 	})
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Use a protected call so we don't error out on first use
 local status_ok, lazy = pcall(require, "lazy")
 if not status_ok then
+	vim.notify("Lazy could not be loaded!", "error")
 	return
 end
 
--- Install your plugins here
 lazy.setup({
 	-- General
 	"nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
@@ -117,8 +116,9 @@ lazy.setup({
 	-- Project
 	"ahmedkhalf/project.nvim",
 
-	-- Alpha
+	-- Initial screen
 	"goolord/alpha-nvim",
+
 	-- Fix cursor hold | Issue #12587
 	"antoinemadec/FixCursorHold.nvim", -- This is needed to fix lsp doc highlight
 

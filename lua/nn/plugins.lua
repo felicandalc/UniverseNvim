@@ -75,6 +75,7 @@ lazy.setup({
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
+		branch = "master",
 		build = function()
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
@@ -94,9 +95,6 @@ lazy.setup({
 			"nvim-telescope/telescope.nvim",
 			"kyazdani42/nvim-web-devicons",
 		},
-		config = function()
-			require("octo").setup()
-		end,
 	},
 
 	-- Nvim tree
@@ -143,4 +141,15 @@ lazy.setup({
 
 	-- Notifications
 	"rcarriga/nvim-notify",
+
+	-- Flutter
+	{
+		"akinsho/flutter-tools.nvim",
+		lazy = false,
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"stevearc/dressing.nvim", -- optional for vim.ui.select
+		},
+		config = true,
+	},
 })

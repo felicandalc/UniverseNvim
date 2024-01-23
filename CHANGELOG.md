@@ -1,10 +1,20 @@
 # Changelog
 
+## [1.3.0](https://github.com/felicandalc/UniverseNvim/compare/v1.2.1...v1.3.0) (2023-11-10)
+
+
+### Features
+
+* **indent-blankline:** migrate to v3 ([78559ad](https://github.com/felicandalc/UniverseNvim/commit/78559adf2355a7a2e3022bbdc1bee3308664f5f3))
+* **mason:** added plugin, bridges and notify ([73abdce](https://github.com/felicandalc/UniverseNvim/commit/73abdce6127021fe38c23b26290190291e368d8f))
+* **mason:** replaced lsp-installer ([ae88dc7](https://github.com/felicandalc/UniverseNvim/commit/ae88dc7dad9c27742c5bd0d273e54be2eabb3ef7))
+
 ## [1.2.2](https://github.com/felicandalc/UniverseNvim/compare/v1.2.1...v1.2.2) (2023-08-11)
 
 
 ### Bug Fixes
 
+* **nvim-tree:** errors after update on config ([2e2f301](https://github.com/felicandalc/UniverseNvim/commit/2e2f301ba0ef99bddd1299822a5676f6fadd7fa9))
 * **treesitter:** ignored objc, throws error on Windows ([4f7f279](https://github.com/felicandalc/UniverseNvim/commit/4f7f2790a8d250d52628872b95de1abb51b57742))
 
 ## [1.2.1](https://github.com/felicandalc/UniverseNvim/compare/v1.2.0...v1.2.1) (2023-07-13)

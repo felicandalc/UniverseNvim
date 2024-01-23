@@ -9,6 +9,8 @@
 * **mason:** added plugin, bridges and notify ([73abdce](https://github.com/felicandalc/UniverseNvim/commit/73abdce6127021fe38c23b26290190291e368d8f))
 * **mason:** replaced lsp-installer ([ae88dc7](https://github.com/felicandalc/UniverseNvim/commit/ae88dc7dad9c27742c5bd0d273e54be2eabb3ef7))
 
+## [1.2.2](https://github.com/felicandalc/UniverseNvim/compare/v1.2.1...v1.2.2) (2023-08-11)
+
 
 ### Bug Fixes
 

@@ -5,7 +5,6 @@ if not status_ok then
 end
 
 configs.setup({
-	ensure_installed = "all",
 	sync_install = false,
 	ignore_install = { "objc" }, -- List of parsers to ignore installing
 	highlight = {
@@ -13,7 +12,7 @@ configs.setup({
 		disable = { "" }, -- list of language that will be disabled
 		additional_vim_regex_highlighting = true,
 	},
-	indent = { enable = true, disable = { "yaml" } },
+	indent = { enable = true },
 	rainbow = {
 		enable = true,
 		-- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
@@ -45,9 +44,5 @@ configs.setup({
 	},
 	autotag = {
 		enable = true,
-	},
-	context_commentstring = {
-		enable = true,
-		enable_autocmd = false,
 	},
 })

@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.0](https://github.com/felicandalc/UniverseNvim/compare/v1.3.0...v1.4.0) (2024-01-23)
+
+
+### Features
+
+* **flutter-tools:** add plugin ([c58295d](https://github.com/felicandalc/UniverseNvim/commit/c58295df7419e16c2e613499f3c357bfb56b031c))
+
+
+### Bug Fixes
+
+* **treesitter:** update plugins ([f2f8239](https://github.com/felicandalc/UniverseNvim/commit/f2f8239182fbcb526e7211a9a32242df97000251))
+
 ## [1.3.0](https://github.com/felicandalc/UniverseNvim/compare/v1.2.1...v1.3.0) (2023-11-10)
 
 

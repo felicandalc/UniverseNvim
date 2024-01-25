@@ -81,7 +81,7 @@ lazy.setup({
 		end,
 	},
 	"nvim-treesitter/playground",
-	"p00f/nvim-ts-rainbow",
+	"HiPhish/rainbow-delimiters.nvim",
 	"JoosepAlviste/nvim-ts-context-commentstring",
 
 	{ "ckipp01/nvim-jenkinsfile-linter", dependencies = { "nvim-lua/plenary.nvim" } },

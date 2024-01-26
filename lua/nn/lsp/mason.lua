@@ -4,7 +4,15 @@ if not status_ok then
 	return
 end
 
-mason.setup()
+mason.setup({
+	ui = {
+		icons = {
+			package_installed = "✓",
+			package_pending = "➜",
+			package_uninstalled = "✗",
+		},
+	},
+})
 
 local status_ok, mason_lsp_config = pcall(require, "mason-lspconfig")
 if not status_ok then
@@ -12,7 +20,10 @@ if not status_ok then
 	return
 end
 
-mason_lsp_config.setup()
+mason_lsp_config.setup({
+	ensure_installed = { "lua_ls", "tsserver" },
+})
+mason_lsp_config.setup_handlers()
 
 local status_ok, mason_null_ls = pcall(require, "mason-null-ls")
 if not status_ok then

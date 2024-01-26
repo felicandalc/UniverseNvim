@@ -23,7 +23,7 @@ end
 mason_lsp_config.setup({
 	ensure_installed = { "lua_ls", "tsserver" },
 })
-mason_lsp_config.setup_handlers()
+mason_lsp_config.setup_handlers({})
 
 local status_ok, mason_null_ls = pcall(require, "mason-null-ls")
 if not status_ok then

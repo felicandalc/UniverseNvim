@@ -1,16 +1,19 @@
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
+local telescope_status_ok, telescope = pcall(require, "telescope")
+if not telescope_status_ok then
 	vim.notify("Telescope could not be loaded!", "error")
 	return
 end
 
 telescope.load_extension("media_files")
 
-local actions = require("telescope.actions")
+local actions_status_ok, actions = pcall(require, "telescope.actions")
+if not actions_status_ok then
+	vim.notify("Telescope actions could not be loaded!", "error")
+	return
+end
 
 telescope.setup({
 	defaults = {
-
 		prompt_prefix = " ",
 		selection_caret = " ",
 		path_display = { "smart" },
@@ -106,3 +109,12 @@ telescope.setup({
 		-- please take a look at the readme of the extension you want to configure
 	},
 })
+
+telescope.load_extension("fzf")
+
+local keymap = vim.keymap
+
+keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
+keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
+keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
+keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })

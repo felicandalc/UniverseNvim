@@ -33,17 +33,21 @@ lazy.setup({
 	"jxnblk/vim-mdx-js",
 
 	-- CMP
-	"hrsh7th/nvim-cmp",
-	"hrsh7th/cmp-buffer",
-	"hrsh7th/cmp-path",
-	"hrsh7th/cmp-cmdline",
-	"saadparwaiz1/cmp_luasnip",
-	"David-Kunz/cmp-npm",
-	"hrsh7th/cmp-nvim-lsp",
-	"hrsh7th/cmp-nvim-lua",
-
-	"L3MON4D3/LuaSnip",
-	"rafamadriz/friendly-snippets",
+	{
+		"hrsh7th/nvim-cmp",
+		event = "InsertEnter",
+		dependencies = {
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
+			"rafamadriz/friendly-snippets",
+			"hrsh7th/cmp-cmdline",
+			"David-Kunz/cmp-npm",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/nvim-cmp",
+		},
+	},
 
 	-- Colorschemes
 	"lunarvim/colorschemes", -- Lots of colorschemes
@@ -69,7 +73,14 @@ lazy.setup({
 	},
 
 	-- Telescope
-	"nvim-telescope/telescope.nvim",
+	{
+		"nvim-telescope/telescope.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+			"nvim-tree/nvim-web-devicons",
+		},
+	},
 	"nvim-telescope/telescope-media-files.nvim",
 
 	-- Treesitter

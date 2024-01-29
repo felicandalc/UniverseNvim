@@ -1,3 +1,9 @@
+local cmp_nvim_lsp_status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not cmp_nvim_lsp_status_ok then
+	vim.notify("CMP Nvim LSP could not be loaded!", "error")
+	return
+end
+
 local M = {}
 
 M.setup = function()
@@ -101,7 +107,7 @@ M.on_attach = function(client, bufnr)
 	lsp_highlight_document(client)
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = cmp_nvim_lsp.default_capabilities()
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then

@@ -61,9 +61,20 @@ lazy.setup({
 	"shaunsingh/nord.nvim",
 
 	-- LSP
-	"williamboman/mason.nvim",
-	"williamboman/mason-lspconfig.nvim",
-	"neovim/nvim-lspconfig",
+	{
+		"williamboman/mason.nvim",
+		dependencies = {
+			"williamboman/mason-lspconfig.nvim",
+		},
+	},
+	{
+		"neovim/nvim-lspconfig",
+		event = { "BufReadPre", "BufNewFile" },
+		dependencies = {
+			"antosha417/nvim-lsp-file-operations",
+			config = true,
+		},
+	},
 	"jose-elias-alvarez/null-ls.nvim", -- For formatters and linters
 	{
 		"jay-babu/mason-null-ls.nvim",

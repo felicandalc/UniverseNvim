@@ -32,6 +32,11 @@ lazy.setup({
 	"folke/which-key.nvim",
 	"jxnblk/vim-mdx-js",
 
+	{
+		"stevearc/dressing.nvim",
+		event = "VeryLazy",
+	},
+
 	-- CMP
 	{
 		"hrsh7th/nvim-cmp",
@@ -159,7 +164,7 @@ lazy.setup({
 		lazy = false,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"stevearc/dressing.nvim", -- optional for vim.ui.select
+			"stevearc/dressing.nvim",
 		},
 		config = true,
 	},

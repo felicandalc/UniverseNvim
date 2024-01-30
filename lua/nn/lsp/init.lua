@@ -12,33 +12,33 @@ handlers.setup()
 
 lspconfig["html"].setup({
 	capabilities = handlers.capabilities,
-	on_attach = on_attach,
+	on_attach = handlers.on_attach,
 })
 
 lspconfig["tsserver"].setup({
 	capabilities = handlers.capabilities,
-	on_attach = on_attach,
+	on_attach = handlers.on_attach,
 })
 
 lspconfig["tailwindcss"].setup({
 	capabilities = handlers.capabilities,
-	on_attach = on_attach,
+	on_attach = handlers.on_attach,
 })
 
 lspconfig["cssls"].setup({
 	capabilities = handlers.capabilities,
-	on_attach = on_attach,
+	on_attach = handlers.on_attach,
 })
 
 lspconfig["emmet_ls"].setup({
 	capabilities = handlers.capabilities,
-	on_attach = on_attach,
+	on_attach = handlers.on_attach,
 	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
 })
 
 lspconfig["lua_ls"].setup({
 	capabilities = handlers.capabilities,
-	on_attach = on_attach,
+	on_attach = handlers.on_attach,
 	settings = {
 		Lua = {
 			diagnostics = {

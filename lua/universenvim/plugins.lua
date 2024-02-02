@@ -84,7 +84,7 @@ lazy.setup({
 			"jose-elias-alvarez/null-ls.nvim",
 		},
 		config = function()
-			require("nn.lsp.null-ls") -- require your null-ls config here (example below)
+			require("universenvim.lsp.null-ls") -- require your null-ls config here (example below)pluin
 		end,
 	},
 

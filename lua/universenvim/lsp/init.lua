@@ -1,4 +1,4 @@
-require("nn.lsp.mason")
+require("universenvim.lsp.mason")
 
 local status_ok, lspconfig = pcall(require, "lspconfig")
 if not status_ok then
@@ -6,7 +6,7 @@ if not status_ok then
 	return
 end
 
-local handlers = require("nn.lsp.handlers")
+local handlers = require("universenvim.lsp.handlers")
 
 handlers.setup()
 

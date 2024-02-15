@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.0.0](https://github.com/felicandalc/UniverseNvim/compare/v1.4.0...v2.0.0) (2024-02-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* **plugins:** this is a whole new UnivereseNvim neovim configuration, new plugins were added, old ones removed, added new set of utilities, new structure for better modularization and improved DRY
+
+### Features
+
+* add `UniverseNvim` identity to folder and alpha ([b1bea87](https://github.com/felicandalc/UniverseNvim/commit/b1bea8765043834c34d5b4b1f7226b2bb25a291c))
+* **dressing:** add plugin independently ([44c9fe1](https://github.com/felicandalc/UniverseNvim/commit/44c9fe16cb0b3941fb864f4a94e7b9c23a1b3dc0))
+* **plugins:** update ([caa09db](https://github.com/felicandalc/UniverseNvim/commit/caa09db1d0887b89526fe49e44e3955e1fb8ea2e))
+* **telescope:** removed unnecesary plugin, added most performant search plugin ([56b5893](https://github.com/felicandalc/UniverseNvim/commit/56b58938e4fe714979ee4329ba338c4d0f45efe9))
+* **UniverseNvim:** add whole new structure, improve modularization, add new plugins ([2bedeea](https://github.com/felicandalc/UniverseNvim/commit/2bedeea5622ca0ed5b5aca62c525c1edcdfadffc))
+
+
+### Bug Fixes
+
+* **mason:** missing configuration for `setup_handlers`, add empty object ([2bb3035](https://github.com/felicandalc/UniverseNvim/commit/2bb3035ea3c97515cede9a64cdaaa5af9342a7f8))
+* **mason:** missing servers configurations ([b4c9812](https://github.com/felicandalc/UniverseNvim/commit/b4c9812bf7b2329ad51d613c00159c73ff83929c))
+* **mason:** missing variable declaration ([8f9389c](https://github.com/felicandalc/UniverseNvim/commit/8f9389c57e8834bcadb7a98adb55173a6b2679b4))
+* **rainbow-delimiters:** install `nvim-ts-rainbow` replacement ([fbe5635](https://github.com/felicandalc/UniverseNvim/commit/fbe5635444e0075bd9d8cfec52d0a3a57b252cd2))
+* **which-key:** removed packer from options ([df6bf67](https://github.com/felicandalc/UniverseNvim/commit/df6bf6782a1372c228a30fbe55820b3e5a399057))
+
+
+### Code Refactoring
+
+* **plugins:** remove mini-animate ([feb797b](https://github.com/felicandalc/UniverseNvim/commit/feb797b7f8f8470e1d08f4cc2f465fbd27d09477))
+
 ## [1.4.0](https://github.com/felicandalc/UniverseNvim/compare/v1.3.0...v1.4.0) (2024-01-23)
 
 

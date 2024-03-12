@@ -54,7 +54,7 @@ return {
 			capabilities = {},
 			format = {
 				formatting_options = nil,
-				timeout_ms = nil,
+				timeout_ms = 10000,
 			},
 			servers = {
 				lua_ls = {

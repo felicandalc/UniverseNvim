@@ -14,6 +14,7 @@ return {
 		opts = function()
 			vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
 			local cmp = require("cmp")
+			local types = require("cmp.types")
 			local defaults = require("cmp.config.default")()
 			local kind_icons = {
 				Array = " ",
@@ -56,6 +57,21 @@ return {
 				Value = " ",
 				Variable = "󰀫 ",
 			}
+
+			local function deprioritize_snippet(entry1, entry2)
+				if entry1:get_kind() == types.lsp.CompletionItemKind.Snippet then
+					return false
+				end
+				if entry2:get_kind() == types.lsp.CompletionItemKind.Snippet then
+					return true
+				end
+			end
+
+			local comparators = { deprioritize_snippet }
+
+			for _, default_comparator in ipairs(defaults.sorting.comparators) do
+				table.insert(comparators, default_comparator)
+			end
 
 			return {
 				completion = {
@@ -122,7 +138,10 @@ return {
 						hl_group = "CmpGhostText",
 					},
 				},
-				sorting = defaults.sorting,
+				sorting = {
+					priority_weigth = 2,
+					comparators = comparators,
+				},
 			}
 		end,
 		config = function(_, opts)

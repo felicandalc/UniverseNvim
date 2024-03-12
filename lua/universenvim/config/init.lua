@@ -6,6 +6,6 @@ require("universenvim.config.autocommands")
 require("universenvim.config.keymaps")
 require("universenvim.config.options")
 
-local defaults = Utils.merge(constants, setup);
+local defaults = Utils.merge(constants, setup)
 
 return defaults

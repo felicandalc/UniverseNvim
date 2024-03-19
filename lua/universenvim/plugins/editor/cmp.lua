@@ -1,4 +1,5 @@
 local Utils = require("universenvim.utils")
+local Config = require("universenvim.config")
 
 return {
 	{
@@ -16,47 +17,7 @@ return {
 			local cmp = require("cmp")
 			local types = require("cmp.types")
 			local defaults = require("cmp.config.default")()
-			local kind_icons = {
-				Array = " ",
-				Boolean = "󰨙 ",
-				Class = " ",
-				Codeium = "󰘦 ",
-				Color = " ",
-				Control = " ",
-				Collapsed = " ",
-				Constant = "󰏿 ",
-				Constructor = " ",
-				Copilot = " ",
-				Enum = " ",
-				EnumMember = " ",
-				Event = " ",
-				Field = " ",
-				File = " ",
-				Folder = " ",
-				Function = "󰊕 ",
-				Interface = " ",
-				Key = " ",
-				Keyword = " ",
-				Method = "󰊕 ",
-				Module = " ",
-				Namespace = "󰦮 ",
-				Null = " ",
-				Number = "󰎠 ",
-				Object = " ",
-				Operator = " ",
-				Package = " ",
-				Property = " ",
-				Reference = " ",
-				Snippet = " ",
-				String = " ",
-				Struct = "󰆼 ",
-				TabNine = "󰏚 ",
-				Text = " ",
-				TypeParameter = " ",
-				Unit = " ",
-				Value = " ",
-				Variable = "󰀫 ",
-			}
+			local kind_icons = Config.icons.kinds
 
 			local function deprioritize_snippet(entry1, entry2)
 				if entry1:get_kind() == types.lsp.CompletionItemKind.Snippet then
@@ -162,7 +123,7 @@ return {
 				end,
 			},
 			{
-				"nvim-cmp",
+				"hrsh7th/nvim-cmp",
 				dependencies = {
 					"saadparwaiz1/cmp_luasnip",
 				},

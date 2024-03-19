@@ -1,15 +1,18 @@
-local Utils = require("universenvim.utils.core")
-
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
-	config = function()
-		local status_ok, lualine = pcall(require, "lualine")
-		if not status_ok then
-			Utils.error("Lualine could not be loaded!")
-			return
+	event = "VeryLazy",
+	init = function()
+		vim.g.lualine_laststatus = vim.o.laststatus
+		if vim.fn.argc(-1) > 0 then
+			-- set an empty statusline till lualine loads
+			vim.o.statusline = " "
+		else
+			-- hide the statusline on the starter page
+			vim.o.laststatus = 0
 		end
-
+	end,
+	opts = function()
 		local hide_in_width = function()
 			return vim.fn.winwidth(0) > 80
 		end
@@ -27,7 +30,7 @@ return {
 		local diff = {
 			"diff",
 			colored = false,
-			symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+			symbols = { added = " ", modified = " ", removed = " " },
 			cond = hide_in_width,
 		}
 
@@ -48,7 +51,6 @@ return {
 			padding = 0,
 		}
 
-		-- cool function for progress
 		local progress = function()
 			local current_line = vim.fn.line(".")
 			local total_lines = vim.fn.line("$")
@@ -59,10 +61,11 @@ return {
 		end
 
 		local spaces = function()
+			---@diagnostic disable-next-line: deprecated
 			return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 		end
 
-		lualine.setup({
+		return {
 			options = {
 				icons_enabled = true,
 				theme = "auto",
@@ -75,7 +78,6 @@ return {
 				lualine_a = { branch, diagnostics },
 				lualine_b = { "mode" },
 				lualine_c = {},
-				-- lualine_x = { "encoding", "fileformat", "filetype" },
 				lualine_x = { diff, spaces, "encoding", filetype },
 				lualine_y = { location },
 				lualine_z = { progress },
@@ -90,6 +92,6 @@ return {
 			},
 			tabline = {},
 			extensions = {},
-		})
+		}
 	end,
 }

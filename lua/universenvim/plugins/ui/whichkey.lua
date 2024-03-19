@@ -2,6 +2,7 @@ local Utils = require("universenvim.utils.core")
 
 return {
 	"folke/which-key.nvim",
+	event = "VeryLazy",
 	opts = {
 		plugins = { spelling = true },
 		defaults = {
@@ -28,6 +29,10 @@ return {
 		if not status_ok then
 			Utils.errors("Which key could not be loaded!")
 			return
+		end
+
+		if Utils.is_avaiable("noice.nvim") then
+			opts.defaults["<leader>sn"] = { name = "+noice" }
 		end
 
 		which_key.setup(opts)

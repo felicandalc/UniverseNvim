@@ -172,4 +172,12 @@ function M.warn(msg, opts)
 	M.notify(msg, opts)
 end
 
+function M.fg(name)
+	local hl = vim.api.nvim_get_hl and vim.api.nvim_get_hl(0, { name = name, link = false })
+		---@diagnostic disable-next-line: deprecated
+		or vim.api.nvim_get_hl_by_name(name, true)
+	local fg = hl and (hl.fg or hl.foreground)
+	return fg and { fg = string.format("#%06x", fg) } or nil
+end
+
 return M

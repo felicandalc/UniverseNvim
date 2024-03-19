@@ -6,6 +6,7 @@ return {
 		event = "VeryLazy",
 		dependencies = {
 			"MunifTanjim/nui.nvim",
+			"folke/which-key.nvim",
 		},
 		opts = {
 			messages = {
@@ -42,7 +43,16 @@ return {
 			{
 				"<S-Enter>",
 				function()
-					require("noice").redirect(vim.fn.getcmdline())
+					if vim.fn.getcmdline then
+						local getcmdline = vim.fn.getcmdline()
+						if type(getcmdline) == "string" then
+							require("noice").redirect(getcmdline)
+						else
+							Utils.error("vim.fn.getcmdline() did not return a string")
+						end
+					else
+						Utils.error("vim.fn.getcmdline() is nil")
+					end
 				end,
 				mode = "c",
 				desc = "Redirect Cmdline",
@@ -100,13 +110,5 @@ return {
 				mode = { "i", "n", "s" },
 			},
 		},
-	},
-	{
-		"folke/which-key.nvim",
-		opts = function(_, opts)
-			if Utils.is_avaiable("noice.nvim") then
-				opts.defaults["<leader>sn"] = { name = "+noice" }
-			end
-		end,
 	},
 }

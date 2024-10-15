@@ -12,6 +12,7 @@ return {
 		},
 	},
 	opts = {
+		stages = "static",
 		timeout = 3000,
 		max_height = function()
 			return math.floor(vim.o.lines * 0.75)
@@ -24,13 +25,15 @@ return {
 		end,
 	},
 	init = function()
-		local status_ok, nvim_notify = pcall(require, "notify")
-
-		if not status_ok then
-			Utils.error("Notify could not be loaded!")
-			return
+		if not Utils.has("noice.nvim") then
+			Utils.on_very_lazy(function()
+				local status_ok, nvim_notify = pcall(require, "notify")
+				if not status_ok then
+					Utils.error("Notify could not be loaded!")
+					return
+				end
+				vim.notify = nvim_notify
+			end)
 		end
-
-		vim.notify = nvim_notify
 	end,
 }

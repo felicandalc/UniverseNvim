@@ -25,9 +25,9 @@ function M.setup()
 	init()
 
 	lazy.setup({
+		{ import = "universenvim.plugins.core" },
 		{ import = "universenvim.plugins.additionals" },
 		{ import = "universenvim.plugins.coding" },
-		{ import = "universenvim.plugins.core" },
 		{ import = "universenvim.plugins.editor" },
 		{ import = "universenvim.plugins.langs" },
 		{ import = "universenvim.plugins.ui" },

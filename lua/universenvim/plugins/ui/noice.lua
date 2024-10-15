@@ -7,8 +7,8 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		opts = function()
-			local lspUtils = require("universenvim.utils.lsp")
-      local keys = lspUtils.keymaps.get()
+			local Utils = require("universenvim.utils")
+			local keys = Utils.lsp.keymaps.get()
 			keys[#keys + 1] = {
 				"<leader>cr",
 				function()
@@ -25,6 +25,13 @@ return {
 		"folke/noice.nvim",
 		event = "VeryLazy",
 		optional = true,
+		--@type NoiceRouteConfig[]
+		routes = {
+			{
+				filter = { event = "notify", find = "^.*WARNING.*vim.treesitter.get_parser.*$" },
+				opts = { skip = true },
+			},
+		},
 		opts = {
 			presets = {
 				inc_rename = true,

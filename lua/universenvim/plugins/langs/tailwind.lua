@@ -13,10 +13,10 @@ return {
 			setup = {
 				tailwindcss = function(_, opts)
 					local tailwindServerName = "tailwindcss"
-					local status_ok, tw = pcall(require, "lspconfig.configs" .. tailwindServerName)
+					local status_ok, tw = pcall(require, "lspconfig.configs." .. tailwindServerName)
 					if not status_ok then
 						local server_status_ok, tw_server =
-							pcall(require, "lspconfig.server_configurations" .. tailwindServerName)
+							pcall(require, "lspconfig.server_configurations." .. tailwindServerName)
 						if not server_status_ok then
 							Utils.error("LSPConfig - TailwindCSS could not be loaded!")
 							return

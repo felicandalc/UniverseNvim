@@ -140,7 +140,7 @@ return {
 			function()
 				require("dap").goto_()
 			end,
-			desc = "Go to Line (No Execute)",
+			desc = "Go to line (no execute)",
 		},
 		{
 			"<leader>di",

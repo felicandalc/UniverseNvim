@@ -1,6 +1,7 @@
 local Utils = require("universenvim.utils")
 
 return {
+	{ "dmmulroy/ts-error-translator.nvim" },
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = function(_, opts)

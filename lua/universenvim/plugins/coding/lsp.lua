@@ -54,7 +54,7 @@ return {
 			capabilities = {},
 			format = {
 				formatting_options = nil,
-				timeout_ms = nil,
+				timeout_ms = 10000,
 			},
 			servers = {
 				lua_ls = {
@@ -196,8 +196,6 @@ return {
 			if have_mason then
 				all_mslp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package)
 			end
-
-			print(all_mslp_servers, servers)
 
 			local ensure_installed = {}
 			for server, server_opts in pairs(servers) do

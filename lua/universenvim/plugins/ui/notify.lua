@@ -25,12 +25,15 @@ return {
 	},
 	init = function()
 		local status_ok, nvim_notify = pcall(require, "notify")
-
 		if not status_ok then
 			Utils.error("Notify could not be loaded!")
 			return
 		end
 
-		vim.notify = nvim_notify
+		-- Check if noice is available
+		local has_noice = pcall(require, "noice")
+		if not has_noice then
+			vim.notify = nvim_notify
+		end
 	end,
 }

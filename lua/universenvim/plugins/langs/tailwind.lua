@@ -1,3 +1,5 @@
+local Utils = require("universenvim.utils.core")
+
 return {
 	{
 		"neovim/nvim-lspconfig",
@@ -10,7 +12,17 @@ return {
 			},
 			setup = {
 				tailwindcss = function(_, opts)
-					local tw = require("lspconfig.server_configurations.tailwindcss")
+					local tailwindServerName = "tailwindcss"
+					local status_ok, tw = pcall(require, "lspconfig.configs" .. tailwindServerName)
+					if not status_ok then
+						local server_status_ok, tw_server =
+							pcall(require, "lspconfig.server_configurations" .. tailwindServerName)
+						if not server_status_ok then
+							Utils.error("LSPConfig - TailwindCSS could not be loaded!")
+							return
+						end
+						tw = tw_server
+					end
 					opts.filetypes = opts.filetypes or {}
 
 					vim.list_extend(opts.filetypes, tw.default_config.filetypes)

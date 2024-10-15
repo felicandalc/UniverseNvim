@@ -51,15 +51,6 @@ return {
 			opts = {},
 		},
 		{
-			"folke/which-key.nvim",
-			optional = true,
-			opts = {
-				defaults = {
-					["<leader>d"] = { name = "+debug" },
-				},
-			},
-		},
-		{
 			"jay-babu/mason-nvim-dap.nvim",
 			dependencies = "mason.nvim",
 			cmd = { "DapInstall", "DapUninstall" },
@@ -108,6 +99,7 @@ return {
 		},
 	},
 	keys = {
+		{ "<leader>d", "", desc = "+debug", mode = { "n", "v" } },
 		{
 			"<leader>dB",
 			function()
@@ -148,7 +140,7 @@ return {
 			function()
 				require("dap").goto_()
 			end,
-			desc = "Go to line (no execute)",
+			desc = "Go to Line (No Execute)",
 		},
 		{
 			"<leader>di",

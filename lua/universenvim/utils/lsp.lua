@@ -79,7 +79,7 @@ function keymaps_root.has(buffer, method)
 	method = method:find("/") and method or "textDocument/" .. method
 	local clients = root.get_clients({ bufnr = buffer })
 	for _, client in ipairs(clients) do
-		if client.supports_method(method) then
+		if client:supports_method(method) then
 			return true
 		end
 	end
@@ -121,10 +121,10 @@ function root.get_clients(opts)
 	if vim.lsp.get_clients then
 		ret = vim.lsp.get_clients(opts)
 	else
-		ret = vim.lsp.get_active_clients(opts)
+		ret = vim.lsp.get_clients(opts)
 		if opts and opts.method then
 			ret = vim.tbl_filter(function(client)
-				return client.supports_method(opts.method, { bufnr = opts.bufnr })
+				return client:supports_method(opts.method, { bufnr = opts.bufnr })
 			end, ret)
 		end
 	end
@@ -144,7 +144,7 @@ end
 function root.on_rename(from, to)
 	local clients = root.get_clients()
 	for _, client in ipairs(clients) do
-		if client.supports_method("workspace/willRenameFiles") then
+		if client:supports_method("workspace/willRenameFiles") then
 			local resp = client.request_sync("workspace/willRenameFiles", {
 				files = {
 					{
@@ -192,8 +192,8 @@ function root.formatter(opts)
 		sources = function(buf)
 			local clients = root.get_clients(Utils.merge(filter, { bufnr = buf }))
 			local ret = vim.tbl_filter(function(client)
-				return client.supports_method("textDocument/formatting")
-					or client.supports_method("textDocument/rangeFormatting")
+				return client:supports_method("textDocument/formatting")
+					or client:supports_method("textDocument/rangeFormatting")
 			end, clients)
 			return vim.tbl_map(function(client)
 				return client.name

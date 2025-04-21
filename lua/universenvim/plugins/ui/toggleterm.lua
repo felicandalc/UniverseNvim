@@ -1,10 +1,12 @@
+local Utils = require("universenvim.utils.core")
+
 return {
 	"akinsho/toggleterm.nvim",
 	version = "*",
 	config = function()
 		local status_ok, toggleterm = pcall(require, "toggleterm")
 		if not status_ok then
-			vim.notify("Toggleterm could not be loaded!", "error")
+			Utils.error("Toggleterm could not be loaded!")
 			return
 		end
 

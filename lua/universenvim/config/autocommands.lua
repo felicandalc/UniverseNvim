@@ -88,3 +88,13 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 		vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
 	end,
 })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+	pattern = "*",
+	callback = function()
+		vim.schedule(function()
+			vim.cmd([[nohlsearch]])
+			vim.fn.clearmatches()
+		end)
+	end,
+})

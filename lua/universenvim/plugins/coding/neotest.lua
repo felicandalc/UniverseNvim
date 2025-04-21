@@ -231,7 +231,7 @@ return {
 						return
 					end
 
-					neotest.run.run({ strategy = "dap" })
+					neotest.run.run({ strategy = "dap", suite = false })
 				end,
 				desc = "Debug Nearest",
 			},

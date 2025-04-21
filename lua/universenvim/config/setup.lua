@@ -32,8 +32,10 @@ function M.setup()
 		{ import = "universenvim.plugins.langs" },
 		{ import = "universenvim.plugins.ui" },
 	}, {
+		lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json",
 		defaults = {
 			lazy = false,
+			version = false,
 		},
 		install = {
 			colorscheme = { "tokyonight" },

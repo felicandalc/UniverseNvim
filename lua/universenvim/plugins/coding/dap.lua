@@ -1,11 +1,27 @@
+local Utils = require("universenvim.utils.core")
+
 local function get_args(config)
-	local args = type(config.args) == "function" and (config.args() or {}) or config.args or {}
-	config = vim.deepcopy(config)
-	config.args = function()
-		local new_args = vim.fn.input("Run with args: ", table.concat(args, " "))
-		return vim.split(vim.fn.expand(new_args), " ")
+	local modified_config = vim.deepcopy(config)
+
+	local initial_args = type(modified_config.args) == "function" and modified_config.args()
+		or modified_config.args
+		or {}
+
+	modified_config._dynamic_args = function()
+		local new_input = vim.fn.input("Run with args: ", table.concat(initial_args, " "))
+		return vim.split(vim.fn.expand(new_input), " ")
 	end
-	return config
+
+	modified_config.args = initial_args
+
+	return setmetatable(modified_config, {
+		__index = function(t, k)
+			if k == "dynamic_args" then
+				return rawget(t, "_dynamic_args")()
+			end
+			return rawget(t, k)
+		end,
+	})
 end
 
 return {
@@ -71,13 +87,52 @@ return {
 						port = conf.port or 8086,
 					}
 					if conf.start_neovim then
-						local dap_run = dap.run
-						dap.run = function(c)
-							adapter.port = c.port
-							adapter.host = c.host
+						if not dap or type(dap.run) ~= "function" then
+							Utils.error("DAP not properly initialized")
+							return
 						end
-						require("osv").run_this()
-						dap.run = dap_run
+
+						local original_run
+						if
+							pcall(function()
+								original_run = dap.run
+							end) and type(original_run) == "function"
+						then
+							local function wrapped_run(c)
+								if type(c) == "table" then
+									adapter.port = c.port or adapter.port
+									adapter.host = c.host or adapter.host
+								else
+									Utils.warn("DAP run called without configuration table")
+								end
+
+								local success, err = pcall(function()
+									require("osv").run_this()
+								end)
+
+								dap.run = original_run
+
+								if not success then
+									Utils.error("OSV execution failed: " .. tostring(err))
+									return nil, err
+								end
+
+								if original_run and type(original_run) == "function" then
+									return original_run(c)
+								end
+							end
+
+							local success, replace_err = pcall(function()
+								dap.run = wrapped_run
+							end)
+
+							if not success then
+								Utils.error("Failed to replace dap.run: " .. tostring(replace_err))
+								dap.run = original_run
+							end
+						else
+							Utils.error("Could not retrieve original dap.run implementation")
+						end
 					end
 					callback(adapter)
 				end

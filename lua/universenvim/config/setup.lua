@@ -31,6 +31,7 @@ function M.setup()
 		{ import = "universenvim.plugins.editor" },
 		{ import = "universenvim.plugins.langs" },
 		{ import = "universenvim.plugins.ui" },
+		{ import = "universenvim.plugins.ai" },
 	}, {
 		lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json",
 		defaults = {

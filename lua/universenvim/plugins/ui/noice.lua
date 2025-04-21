@@ -25,7 +25,10 @@ return {
 		"folke/noice.nvim",
 		event = "VeryLazy",
 		optional = true,
-		--@type NoiceRouteConfig[]
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
 		routes = {
 			{
 				filter = { event = "notify", find = "^.*WARNING.*vim.treesitter.get_parser.*$" },

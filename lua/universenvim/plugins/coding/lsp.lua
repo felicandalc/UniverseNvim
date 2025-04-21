@@ -144,7 +144,7 @@ return {
 
 			if opts.inlay_hints.enabled then
 				Utils.lsp.on_attach(function(client, buffer)
-					if client.supports_method("textDocument/inlayHint") then
+					if client:supports_method("textDocument/inlayHint") then
 						inlay_hints(buffer, true)
 					end
 				end)
@@ -210,7 +210,7 @@ return {
 			end
 
 			if have_mason then
-				mlsp.setup({ ensure_installed = ensure_installed, handlers = { setup } })
+				mlsp.setup({ ensure_installed = ensure_installed, handlers = { setup }, automatic_installation = true })
 			end
 		end,
 	},

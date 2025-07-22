@@ -111,7 +111,7 @@ return {
 			},
 		},
 		config = function(_, opts)
-			if Utils.is_avaiable("neoconf.nvim") then
+			if Utils.is_available("neoconf.nvim") then
 				local plugin = require("lazy.core.config").spec.plugins["neoconf.nvim"]
 				require("neoconf").setup(require("lazy.core.plugin").values(plugin, "opts", false))
 			end

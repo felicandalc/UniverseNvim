@@ -19,10 +19,10 @@ function M.merge(...)
 end
 
 function M.is_windows()
-	return vim.loop.os_uname().sysname:find("Windows") ~= nil
+	return vim.uv.os_uname().sysname:find("Windows") ~= nil
 end
 
-function M.is_avaiable(plugin)
+function M.is_available(plugin)
 	local lazy_config_avail, lazy_config = pcall(require, "lazy.core.config")
 	if not lazy_config_avail then
 		M.error(plugin .. "could not be loaded!")

@@ -50,7 +50,7 @@ return {
 		vim.api.nvim_create_autocmd("BufAdd", {
 			callback = function()
 				vim.schedule(function()
-					pcall(nvim_bufferline)
+					pcall(require("bufferline").refresh)
 				end)
 			end,
 		})

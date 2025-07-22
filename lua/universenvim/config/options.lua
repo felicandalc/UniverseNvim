@@ -44,8 +44,14 @@ vim.opt.shortmess:append("c")
 if vim.fn.has("nvim-0.10") == 1 then
 	vim.opt.smoothscroll = true
 	vim.opt.foldmethod = "expr"
+	vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+	vim.opt.foldtext = ""
+	vim.opt.foldlevel = 99
+	vim.opt.foldlevelstart = 99
 else
 	vim.opt.foldmethod = "indent"
+	vim.opt.foldlevel = 99
+	vim.opt.foldlevelstart = 99
 end
 
 for k, v in pairs(options) do

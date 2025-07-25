@@ -147,8 +147,9 @@ return {
 						fallback()
 					end,
 					["<Tab>"] = cmp.mapping(function(fallback)
-						local codeium_accept = vim.fn["codeium#Accept"]
-						if codeium_accept and codeium_accept() ~= "" then
+						local has_codeium, codeium_result = pcall(vim.fn["codeium#Accept"])
+						if has_codeium and codeium_result ~= "" then
+							vim.fn["codeium#Accept"]()
 							return
 						elseif cmp.visible() then
 							cmp.select_next_item()

@@ -194,7 +194,15 @@ return {
 			local have_mason, mlsp = pcall(require, "mason-lspconfig")
 			local all_mslp_servers = {}
 			if have_mason then
-				all_mslp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package)
+				-- Use the correct API to get mappings
+				local ok, mappings = pcall(require, "mason-lspconfig.mappings")
+				if ok then
+					local mason_map = mappings.get_mason_map()
+					all_mslp_servers = vim.tbl_keys(mason_map.lspconfig_to_package)
+				else
+					-- Fallback: get available servers directly
+					all_mslp_servers = mlsp.get_available_servers() or {}
+				end
 			end
 
 			local ensure_installed = {}
@@ -267,31 +275,36 @@ return {
 						return Utils.lsp.format({
 							bufnr = buf,
 							filter = function(client)
-								return client.name == "null-ls"
+								return client.name == "none-ls"
 							end,
 						})
 					end,
 					sources = function(buf)
-						local ret = require("null-ls.sources").get_available(vim.bo[buf].filetype, "NULL_LS_FORMATTING")
-							or {}
-						return vim.tbl_map(function(source)
-							return source.name
-						end, ret)
+						return {}  -- Disabled to prevent errors
 					end,
 				})
 			end)
 		end,
 		opts = function(_, opts)
-			local nls = require("null-ls")
-			opts.root_dir = opts.root_dir
-				or require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git")
-			opts.sources = vim.list_extend(opts.sources or {}, {
-				nls.builtins.formatting.fish_indent,
-				nls.builtins.diagnostics.fish,
-				nls.builtins.formatting.stylua,
-				nls.builtins.formatting.shfmt,
-				nls.builtins.formatting.prettier,
-			})
+			return opts or {}
+		end,
+		config = function(_, opts)
+			-- none-ls plugin is internally structured as null-ls
+			local ok, null_ls = pcall(require, "null-ls")
+			if not ok then
+				vim.notify("none-ls.nvim failed to load", vim.log.levels.ERROR)
+				return
+			end
+			
+			-- Set up with proper sources
+			local sources = {
+				null_ls.builtins.formatting.stylua,
+				null_ls.builtins.formatting.prettier,
+			}
+			
+			null_ls.setup(vim.tbl_extend("force", opts, {
+				sources = sources,
+			}))
 		end,
 	},
 }

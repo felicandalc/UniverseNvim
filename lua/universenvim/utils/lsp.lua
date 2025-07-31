@@ -15,7 +15,42 @@ function keymaps_root.get()
 		{
 			"gd",
 			function()
-				require("telescope.builtin").lsp_definitions({ reuse_win = true })
+				local params = vim.lsp.util.make_position_params()
+				vim.lsp.buf_request(0, "textDocument/definition", params, function(err, result, ctx)
+					if err then
+						vim.notify("Error getting definitions: " .. err.message, vim.log.levels.ERROR)
+						return
+					end
+					
+					if not result or vim.tbl_isempty(result) then
+						vim.notify("No definitions found", vim.log.levels.INFO)
+						return
+					end
+					
+					local items = type(result[1]) == "table" and result or { result }
+					local unique_items = {}
+					local seen = {}
+					
+					for _, item in ipairs(items) do
+						if item.uri and item.range then
+							local key = item.uri .. ":" .. item.range.start.line .. ":" .. item.range.start.character
+							if not seen[key] then
+								seen[key] = true
+								table.insert(unique_items, item)
+							end
+						end
+					end
+					
+					if #unique_items == 1 then
+						vim.lsp.util.jump_to_location(unique_items[1], vim.lsp.get_client_by_id(ctx.client_id).offset_encoding, true)
+					else
+						vim.fn.setqflist({}, " ", {
+							title = "LSP Definitions",
+							items = vim.lsp.util.locations_to_items(unique_items, vim.lsp.get_client_by_id(ctx.client_id).offset_encoding)
+						})
+						require("telescope.builtin").quickfix({ reuse_win = true })
+					end
+				end)
 			end,
 			desc = "Goto Definition",
 			has = "definition",

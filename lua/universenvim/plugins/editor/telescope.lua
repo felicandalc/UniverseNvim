@@ -5,7 +5,12 @@ return {
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+			{
+				"nvim-telescope/telescope-fzf-native.nvim",
+				build = Utils.is_windows()
+						and "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -G 'MinGW Makefiles' -DCMAKE_POLICY_VERSION_MINIMUM=3.5 && cmake --build build --config Release"
+					or "make",
+			},
 			"nvim-tree/nvim-web-devicons",
 		},
 		config = function()
@@ -15,7 +20,7 @@ return {
 				return
 			end
 
-			telescope.load_extension("media_files")
+			pcall(telescope.load_extension, "media_files")
 
 			local actions_status_ok, actions = pcall(require, "telescope.actions")
 			if not actions_status_ok then
@@ -111,7 +116,7 @@ return {
 						-- filetypes whitelist
 						-- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
 						filetypes = { "png", "webp", "jpg", "jpeg" },
-						find_cmd = "rg", -- find command (defaults to `fd`)
+						find_cmd = vim.fn.executable("rg") == 1 and "rg" or "fd",
 					},
 					-- Your extension configuration goes here:
 					-- extension_name = {
@@ -121,7 +126,7 @@ return {
 				},
 			})
 
-			telescope.load_extension("fzf")
+			pcall(telescope.load_extension, "fzf")
 
 			local keymap = vim.keymap
 

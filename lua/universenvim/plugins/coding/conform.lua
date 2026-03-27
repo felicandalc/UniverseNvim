@@ -1,4 +1,4 @@
-local Utils = require("universenvim.utils.core")
+local Core = require("universenvim.utils.core")
 local Format = require("universenvim.utils.formatter").format
 
 local M = {}
@@ -20,7 +20,7 @@ function M.setup(_, opts)
 
 	local conform_status_ok, conform = pcall(require, "conform")
 	if not conform_status_ok then
-		Utils.error("Conform could not be loaded!")
+		Core.error("Conform could not be loaded!")
 		return
 	end
 
@@ -44,7 +44,7 @@ return {
 			},
 		},
 		init = function()
-			Utils.on_very_lazy(function()
+			Core.on_very_lazy(function()
 				Format.register({
 					name = "conform.nvim",
 					priority = 100,
@@ -53,7 +53,7 @@ return {
 						local plugin = require("lazy.core.config").plugins["conform.nvim"]
 						local Plugin = require("lazy.core.plugin")
 						local opts = Plugin.values(plugin, "opts", false)
-						require("conform").format(Utils.merge(opts.format, { bufnr = buf }))
+						require("conform").format(Core.merge(opts.format, { bufnr = buf }))
 					end,
 					sources = function(buf)
 						local ret = require("conform").list_formatters(buf)
@@ -73,7 +73,7 @@ return {
 				},
 				formatters_by_ft = {
 					lua = { "stylua" },
-					fish = { "fish_indent" },
+					fish = not Core.is_windows() and { "fish_indent" } or nil,
 					sh = { "shfmt" },
 				},
 				formatters = {

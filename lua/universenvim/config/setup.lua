@@ -41,6 +41,9 @@ function M.setup()
 		install = {
 			colorscheme = { "tokyonight" },
 		},
+		rocks = {
+			enabled = false,
+		},
 		performance = {
 			rtp = {
 				disabled_plugins = {
